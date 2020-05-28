@@ -8,10 +8,22 @@
 </head>
 
 <body>
-    <div>
-        <h1>TAKE NOTE</h1>
-    </div>
-    <a href="{% url 'new_note' %}">New note</a>
+    <header>
+        <div>
+            <h1>TAKE NOTE</h1>
+        </div>
+        <a href="{% url 'new_note' %}">New note</a>
+    </header>
+
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">Log out</a></p>
+    {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+
+
     <div>
         {% block content %}
 

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+{% for note in notes %}
+<div>
+    <p>{{ note.body }}</p>
+    <a href="{% url 'note_detail' note.pk %}">>>></a>
+</div>
+{% endfor %}
+{% endif %}
+
+
+
+{% endblock content %}

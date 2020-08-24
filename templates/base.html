@@ -10,7 +10,8 @@
 <body>
     <header>
         <div>
-            <h1>TAKE NOTE</h1>
+          <a href="{% url 'home' %}"><h1>TAKE NOTE</h1></a>
+            
         </div>
         <a href="{% url 'new_note' %}">New note</a>
     </header>
@@ -21,6 +22,7 @@
     {% else %}
         <p>You are not logged in.</p>
         <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
     {% endif %}
 
 

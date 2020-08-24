@@ -1,11 +1,13 @@
 from django.shortcuts import render
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from django.views.generic import (
             ListView, 
             CreateView, 
             DetailView, 
             UpdateView, 
-            DeleteView
+            DeleteView,
     )
 from django.urls import reverse_lazy
 from .models import Note
@@ -14,7 +16,7 @@ from .models import Note
 class NoteListView(ListView):
     model = Note
     context_object_name = "notes"
-    template_name = 'home.html'
+    template_name = 'note_list.html'
 
 class NoteDetailView(DetailView):
     model = Note

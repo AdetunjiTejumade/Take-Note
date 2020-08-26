@@ -6,6 +6,7 @@ from django.urls import reverse
 
 class Note(models.Model):
     body = models.TextField()
+    author = models.CharField(max_length =200)
     date_added = models.DateTimeField(auto_now="True")
 
     def __str__(self):

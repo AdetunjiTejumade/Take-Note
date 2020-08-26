@@ -4,10 +4,12 @@ from .views import (
         NoteCreateView, 
         NoteDetailView, 
         NoteUpdateView,
-        NoteDeleteView
+        NoteDeleteView,
+        HomeView
     )
 urlpatterns = [
-    path('', NoteListView.as_view(), name="home"), # Home Page
+    path('', HomeView.as_view(), name="home"), # note Page
+    path('note', NoteListView.as_view(), name="note"), # note Page
     path('note/<int:pk>', NoteDetailView.as_view(), name="note_detail"), # Url for detailed note view
     path('note/new', NoteCreateView.as_view(), name="new_note"), # Url for creating new notes
     path('note/<int:pk>/edit/', NoteUpdateView.as_view(), name="update_note"), # Update note url | note/pk/edit

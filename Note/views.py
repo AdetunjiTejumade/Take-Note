@@ -23,7 +23,7 @@ from .models import Note
 class HomeView(TemplateView):
     template_name = "home.html" 
 
-class NoteListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
+class NoteListView(LoginRequiredMixin, ListView):
     model = Note
     context_object_name = "notes"
     template_name = 'note_list.html'

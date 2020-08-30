@@ -22,10 +22,6 @@ class HomeView(TemplateView):
     template_name = "home.html" 
 
 class NoteListView(LoginRequiredMixin, ListView):
-    #model = Note
-    # print(request.user)
-    # queryset = Note.objects.filter(user=user)
-    # user = request.user
     context_object_name = "notes"
     template_name = 'note_list.html'
     login_url = 'login'

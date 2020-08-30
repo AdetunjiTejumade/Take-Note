@@ -4,6 +4,8 @@
     <div>
         {{ note_detail.body }}
     </div>
+
+    
     <a href="{% url 'update_note' note_detail.pk %}">Edit</a>
     <a href="{% url 'delete_note' note_detail.pk %}">Delete</a>
 {% endblock content %}

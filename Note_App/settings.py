@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #my apps
     'Note.apps.NoteConfig',
     'accounts.apps.AccountsConfig',
+
 ]
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
@@ -123,7 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 
 LOGIN_REDIRECT_URL = 'note' # specifies where users should be redirected to if login is successful
 LOGOUT_REDIRECT_URL = 'home'

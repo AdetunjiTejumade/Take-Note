@@ -1,10 +1,12 @@
 Todo 
 
 Add authentication to 
-Detail view
-Delete view
-Update view
+Detail view (done)
+Delete view (done)
+Update view (done)
+Show notes made by a user (done)
 
 
-
-Show notes made by a user
+encrypt note text field (done)
+add slugs
+add tags

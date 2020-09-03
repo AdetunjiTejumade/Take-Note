@@ -8,6 +8,8 @@ pytest = "*"
 
 [packages]
 django = "==3.1"
+django-taggit = "*"
+django-cryptography = "*"
 
 [requires]
 python_version = "3.8"

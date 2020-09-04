@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'Note.apps.NoteConfig',
     'accounts.apps.AccountsConfig',
 
+    #third party 
+    'taggit',
+
 ]
 AUTH_USER_MODEL = 'accounts.CustomUser'
 

@@ -6,7 +6,7 @@
 {% for note in notes %}
 <div>
     <p>{{ note.body }}</p>
-    <a href="{% url 'note_detail' note.pk %}">>>></a>
+    <a href="{% url 'note_detail' note.slug %}">>>></a>
 </div>
 {% endfor %}
 {% endif %}

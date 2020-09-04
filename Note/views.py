@@ -14,6 +14,9 @@ from django.views.generic.edit import (
     CreateView
 )
 
+from taggit.models import Tag
+from django.shortcuts import render, get_object_or_404 
+
 from django.urls import reverse_lazy
 from .models import Note
 # Create your views here.
@@ -39,7 +42,7 @@ class NoteDetailView(LoginRequiredMixin, DetailView):
 class NoteCreateView(LoginRequiredMixin, CreateView):
     model = Note
     template_name = 'new_note.html'
-    fields = ['title', 'body'] # Specifies field to be displayed
+    fields = ['title', 'body', 'tags'] # Specifies field to be displayed
     login_url = 'login'
 
     def form_valid(self, form):
@@ -49,7 +52,7 @@ class NoteCreateView(LoginRequiredMixin, CreateView):
 class NoteUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Note
     template_name = 'update_note.html'
-    fields = ['title', 'body']
+    fields = ['title', 'body', 'tags']
     login_url = 'login'
 
     def test_func(self):
@@ -65,3 +68,7 @@ class NoteDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()      
         return obj.author == self.request.user
+
+
+# class TagView(ListView):
+#     queryset = Note.objects.filter(tags=)

@@ -5,6 +5,12 @@
         {{ note_detail.title }}
         {{ note_detail.body }}
         {{ note_detail.date_updated }}
+             
+        {% for tag in note_detail.tags.all %}
+            <!-- <a href="{}">{{tag}}</a>   -->
+            
+        {% endfor %}
+            
     </div>
 
     

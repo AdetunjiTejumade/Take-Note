@@ -5,5 +5,5 @@ from .models import Note
 
 class NoteAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug' : ('author', 'title',)}
-
+    # add populate slug on frontend
 admin.site.register(Note, NoteAdmin)

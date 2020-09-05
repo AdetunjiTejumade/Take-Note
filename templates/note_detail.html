@@ -14,6 +14,6 @@
     </div>
 
     
-    <a href="{% url 'update_note' note_detail.pk %}">Edit</a>
-    <a href="{% url 'delete_note' note_detail.pk %}">Delete</a>
+    <a href="{% url 'update_note' note_detail.slug %}">Edit</a>
+    <a href="{% url 'delete_note' note_detail.slug %}">Delete</a>
 {% endblock content %}

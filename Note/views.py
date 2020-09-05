@@ -33,11 +33,15 @@ class NoteListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Note.objects.filter(author=self.request.user)
     
-class NoteDetailView(LoginRequiredMixin, DetailView):
+class NoteDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = Note
     context_object_name = 'note_detail'
     template_name = 'note_detail.html'
     login_url = 'login'
+
+    def test_func(self):
+        obj = self.get_object()      
+        return obj.author == self.request.user
 
 class NoteCreateView(LoginRequiredMixin, CreateView):
     model = Note
